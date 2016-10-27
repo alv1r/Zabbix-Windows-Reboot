@@ -13,4 +13,4 @@ set-executionpolicy remotesigned
 Полученный определяем в папку \zabbix_agent\scripts на клиенте, в конфигурации пишем:
 >UserParameter=Reboot.IsNedeed,powershell -NoProfile -ExecutionPolicy Bypass -command "$ErrorActionPreference = 'silentlycontinue';  $eval = get-pendingreboot; if ($eval.RebootPending) { Write-Host '1'; } else { Write-Host '0' };
 
-�Импортируем шаблоне в �Zabbix. Шаблон настроен так, чтобы, получив информацию о необходимости перезагрузки, выдать оповещение, а затем, когда полученная информаця говорит о том, что перезагрузка больше не требуется - сам закроет проблему.
+Импортируем шаблоне в Zabbix. Шаблон настроен так, чтобы, получив информацию о необходимости перезагрузки, выдать оповещение, а затем, когда полученная информаця говорит о том, что перезагрузка больше не требуется - сам закроет проблему.
